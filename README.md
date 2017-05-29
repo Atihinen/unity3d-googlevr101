@@ -1,5 +1,6 @@
 # Unity3D + GoogleVR 101 training
 Short tutorial how to get started with Unity 3D + GoogleVR
+Checkout the example here: https://joonasj.itch.io/unity3dgooglevr-101
 
 # Requirements
 * Unity3D (free version works) https://unity3d.com/get-unity/download
