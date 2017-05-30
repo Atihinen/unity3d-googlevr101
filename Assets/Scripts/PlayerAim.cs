@@ -24,21 +24,20 @@ public class PlayerAim : MonoBehaviour {
                 Debug.Log("Zombiee!");
                 indicator.SetActive(true);
                 countDown = true;
-                if (timeout < 0)
-                {
-                    Destroy(vHit.collider.gameObject);
-                    resetIndicator();
-                }
             }
-            
-        }
-        else
-        {
-            resetIndicator();
+            else
+            {
+                resetIndicator();
+            }
         }
         if (countDown)
         {
             timeout -= Time.deltaTime;
+            if (timeout < 0)
+            {
+                Destroy(vHit.collider.gameObject);
+                resetIndicator();
+            }
         }
     }
 
