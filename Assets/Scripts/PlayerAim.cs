@@ -7,6 +7,7 @@ public class PlayerAim : MonoBehaviour {
     private bool countDown = false;
     private readonly float maxTimeout = 2;
     private float timeout;
+	public Camera cam;
 	// Use this for initialization
 	void Start () {
         indicator.SetActive(false);
@@ -16,9 +17,10 @@ public class PlayerAim : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         RaycastHit vHit = new RaycastHit();
-        Ray vRay = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray vRay = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if(Physics.Raycast(vRay, out vHit, 100))
         {
+			Debug.DrawLine (transform.position, vHit.point, Color.cyan);
             if (vHit.collider.gameObject.tag.Equals(this.zombieTag))
             {
                 Debug.Log("Zombiee!");
