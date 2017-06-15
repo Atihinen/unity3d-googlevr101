@@ -4,10 +4,11 @@ using System.Collections;
 public class Zombie : MonoBehaviour {
     private GameObject target;
     private float speed;
+	private readonly string targetTag = "Player";
 	// Use this for initialization
 	void Start () {
-        target = Camera.main.gameObject;
-        speed = Random.Range(0.5f, 3);
+		target = GameObject.FindGameObjectWithTag (targetTag);
+        speed = Random.Range(0.1f, 0.3f);
 	}
 	
 	// Update is called once per frame
