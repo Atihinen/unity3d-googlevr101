@@ -5,10 +5,12 @@ public class Zombie : MonoBehaviour {
     private GameObject target;
     private float speed;
 	private readonly string targetTag = "Player";
+	public float minSpeed = 0.1f;
+	public float maxSpeed = 0.5f;
 	// Use this for initialization
 	void Start () {
 		target = GameObject.FindGameObjectWithTag (targetTag);
-        speed = Random.Range(0.1f, 0.3f);
+		speed = Random.Range(this.minSpeed, this.maxSpeed);
 	}
 	
 	// Update is called once per frame
